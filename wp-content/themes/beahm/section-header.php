@@ -6,7 +6,7 @@
             <?php else: ?>
                 <?php if(have_posts()): the_post(); ?>
                 <?php the_field('quote') ?>
-                <?php endif ?>
+                <?php endif; ?>
             <?php endif ?>
         </div>
     </div>

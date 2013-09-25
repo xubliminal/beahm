@@ -2,7 +2,6 @@
 <?php get_template_part('section', 'header') ?>
 <div class="white-block">
     <div class="container" id="content">
-        <?php if(have_posts()): the_post() ?>
         <div class="row">
             <div class="col-sm-7">
                 <div class="city-caption clearfix">
@@ -19,7 +18,6 @@
             <?php get_sidebar('testimonials') ?>
         </div>
         <hr/>
-        <?php endif ?>
         <?php get_template_part('section', 'asseenon'); ?>
     </div>
 </div>
