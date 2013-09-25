@@ -16,6 +16,16 @@
 	text-shadow: 0 1px 0 #f6f6f6;
 	border-top:1px solid #fbfbfb !important;
 }
+.btn-default:hover, .btn-default:active, .btn-default:focus{
+	background: #fff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #efefef 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efefef)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffffff 0%,#efefef 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
+}
 .btn-default-2{
 	background: #ffffff; /* Old browsers */
 	background: -moz-linear-gradient(top,  #ffffff 0%, #e9e9e9 100%); /* FF3.6+ */
@@ -274,12 +284,6 @@
 	background-color: transparent;
 }
 
-#nav-wrap .nav .current-menu-item > a,
-#nav-wrap .nav .current-menu-parent > a {color: #36a1ee;}
-
-#nav-wrap .nav .current-menu-parent > ul li a:hover {color: #fff;}
-
-#nav-wrap .nav > li > a:hover{background-image: url(../images/bgr-nav-dropdown-active.png); color: #fff}
 #nav-wrap .nav .caret{
 	display: none;
 	margin-top:-2px;
@@ -314,7 +318,7 @@
 		padding-top: 7px;
         padding-bottom: 7px;
 	}
-	#nav-wrap .nav > li > a:hover, #nav-wrap .nav > li.active > a{
+	#nav-wrap .nav > li#menu-item-34 a{
 		background-color: #e3eff7;
 		background-image: none;
 		color: #36a1ee;
@@ -510,7 +514,8 @@
     padding-bottom: 19px;
     display: none;
 }
-.person:hover .person-cv{display: block;}
+.person-photo img { cursor: pointer;}
+.person-cv.show{display: block;}
 .person-cv-in{
 	background-color: #0064af;
 	padding: 15px 1px 1px;
@@ -783,6 +788,9 @@ blockquote{
 	margin-top: 35px;
     margin-bottom: 20px;
 }
+.post-detail-sub-title {
+    margin-top: 0px;
+}
 .related-posts .blog-sb-post{
 	border: none;
 	margin-bottom: 20px;
@@ -938,3 +946,9 @@ div > .post-comment:first-child{
 }
 
 #commentform .form-submit #submit { display: none; }
+
+.related-posts {
+    background: #f4f4f4;
+    padding: 20px 20px 0px;
+    margin-bottom: 20px;
+}

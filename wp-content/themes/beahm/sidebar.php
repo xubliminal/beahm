@@ -21,7 +21,6 @@
     <h2 class="blog-sb-title">Most Viewed</h2>
     <?php while(have_posts()): the_post(); ?>
     <div class="blog-sb-post">
-        <p class="sb-post-date"><?php the_time('F j, Y') ?></p>
         <h3 class="sb-post-title"><?php the_title() ?></h3>
         <p class="sb-post-author">Written by <?php the_author() ?></p>
         <div class="sb-post-content clearfix">

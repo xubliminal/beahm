@@ -1,7 +1,7 @@
 <?php get_header() ?>
 <?php get_template_part('section', 'header') ?>
 <div class="white-block">
-    <div class="container">
+    <div class="container" id="content">
         <?php if(have_posts()): the_post() ?>
         <div class="row">
             <div class="col-sm-7">

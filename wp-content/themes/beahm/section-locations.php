@@ -7,7 +7,7 @@
             <?php query_posts(array('post_type' => 'location', 'order' => 'ASC')) ?>
             <?php if(have_posts()): while(have_posts()): the_post();  ?>
             <div class="col-sm-6 text-center loco">
-                <p><?php the_post_thumbnail('location') ?></p>
+                <p><a href="<?php the_permalink() ?>"><?php the_post_thumbnail('location') ?></a></p>
                 <p><strong><?php the_title() ?></strong></p>
                 <p>
                     <?php the_field('address') ?>

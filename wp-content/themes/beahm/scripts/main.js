@@ -12,5 +12,15 @@
             $a.dropdown()
             $(this).parents('li').addClass('dropdown');
         });
+        
+        $('.person-photo img').click(function(e){
+            $ttip = $(this).parents('.person').find('.person-cv');
+            $ttip.toggleClass('show');
+            return false;
+        });
+        
+        $('body').click(function(){
+            $('.person-cv').removeClass('show');
+        });
     });
 })(window.jQuery);
