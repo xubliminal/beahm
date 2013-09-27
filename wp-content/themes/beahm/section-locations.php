@@ -1,4 +1,4 @@
-<div class="white-block">
+<div class="white-block" id="locations">
     <div class="container">
         <div class="wb-caption text-center">
             <h2 class="grey-line-ttl"><span>Locations</span></h2>

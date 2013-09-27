@@ -4,6 +4,8 @@
             $(this).parent().localScroll();
         });
         
+        $('#menu-item-34').localScroll();
+        
         $('#nav-wrap .sub-menu').each(function(){
             $(this).addClass('dropdown-menu');
             $a = $(this).prev('a');
