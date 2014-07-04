@@ -29,13 +29,23 @@
                     <div class="post-content clearfix">
                         <p><?php the_post_thumbnail('custom_thumb', array('class' => 'img-rounded img-responsive')) ?></p>
                         <?php the_content() ?>
-                        <p class="post-social">
-                            <span class="post-social-lbl">Share this:</span>
-                            <a st_url="<?php the_permalink() ?>" st_title="<?php the_title() ?>" class='st_twitter_custom btn btn-default-2' ><img src="<?php echo get_template_directory_uri() ?>/images/icon-blog-twitter.png" alt="" /></a>
-                            <a st_url="<?php the_permalink() ?>" st_title="<?php the_title() ?>" class='st_googleplus_custom btn btn-default-2'><img src="<?php echo get_template_directory_uri() ?>/images/icon-blog-google.png" alt="" /></a>
-                            <a st_url="<?php the_permalink() ?>" st_title="<?php the_title() ?>" class='st_facebook_custom btn btn-default-2'><img src="<?php echo get_template_directory_uri() ?>/images/icon-blog-facebook.png" alt="" /></a>
-                            <a st_url="<?php the_permalink() ?>" st_title="<?php the_title() ?>" class='st_email_custom btn btn-default-2'><img src="<?php echo get_template_directory_uri() ?>/images/icon-blog-email.png" alt="" /></a>
-                        </p>
+                        <!-- AddThis Button BEGIN -->
+                        <div class="addthis_toolbox addthis_default_style addthis_16x16_style">
+                            <p class="post-social">
+                                <span class="post-social-lbl">Share this:</span>
+                                <a class="addthis_button_twitter btn btn-default-2">
+                                	<img src="<?php echo get_template_directory_uri() ?>/images/icon-blog-twitter.png" alt="" /></a>
+                                <a class="addthis_button_google_plusone_share btn btn-default-2">
+                                	<img src="<?php echo get_template_directory_uri() ?>/images/icon-blog-google.png" alt="" /></a>
+                                <a class="addthis_button_facebook btn btn-default-2">
+                                	<img src="<?php echo get_template_directory_uri() ?>/images/icon-blog-facebook.png" alt="" /></a>
+                                <a class="addthis_button_email btn btn-default-2">
+                                	<img src="<?php echo get_template_directory_uri() ?>/images/icon-blog-email.png" alt="" /></a>
+                            </p>
+                        </div>
+                        <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+                        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52573cde6ac70d20"></script>
+                        <!-- AddThis Button END -->
                     </div> <!-- .post-content -->
                 </div> <!-- .blog-post -->
 

@@ -6,7 +6,7 @@
                 <?php if(count($ratings)): ?>
                 <div class="col-sm-6 col-md-7 col-lg-6">
                     <div class="wb-caption">
-                        <h2>Check us out!</h2>
+                        <h2>Appreciate all the love!</h2>
                     </div>
                     <?php foreach($ratings as $r): ?>
                     <div class="review-wrap clearfix" <?php if($r['title'] == 'Facebook'): ?> id="facebook-widget-wrap" <?php endif ?> >
@@ -16,7 +16,7 @@
                                 <?php if($r['title'] == 'Facebook'): ?>
                                 <?php echo $r['fb_code'] ?>
                                 <?php else: ?>
-                                <a href="<?php echo $r['reviews_link'] ?>" class="btn btn-default-2 pull-right"><span class="hide-x">Read </span>Reviews</a>
+                                <a href="<?php echo $r['reviews_link'] ?>" class="btn btn-default-2 pull-right" target="_blank"><span class="hide-x">Read </span>Reviews</a>
                                 <h3><?php echo $r['title'] ?></h3>
                                 <p><img src="<?php echo $r['rating'] ?>" alt="" /></p>
                                 <?php endif ?>

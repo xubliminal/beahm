@@ -11,7 +11,7 @@
                 <p><strong><?php the_title() ?></strong></p>
                 <p>
                     <?php the_field('address') ?>
-                    <br /><span class="location-phone"><?php the_field('phone') ?></span>
+                    <br /><span class="location-phone"><a href="tel:<?php print beahmlaw_clean_phone(get_field('phone')) ?>"><?php the_field('phone') ?></a></span>
                 </p>
                 <p><a href="<?php the_permalink() ?>" class="btn btn-primary">VIEW INFO</a></p>
             </div> <!-- .col-sm-6 -->

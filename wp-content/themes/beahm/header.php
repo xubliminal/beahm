@@ -26,6 +26,7 @@
     <?php wp_head() ?>
 </head>
 <body>
+<div id="main-container">
 <div id="nav-wrap">
     <div class="container">
         <div class="row">
@@ -42,3 +43,4 @@
         </div> <!-- .row -->
     </div> <!-- .container -->
 </div> <!-- #nav-wrap -->
+<div id="main-content-container">

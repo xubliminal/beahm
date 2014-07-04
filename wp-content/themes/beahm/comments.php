@@ -7,7 +7,7 @@
 
 <div class="blog-form">    
     <?php comment_form(array(
-        'comment_notes_before' => '<p>Bitters Banksy gentrify Pinterest pour-over, post-ironic pop-up cardigan iPhone tofu. Neutra four loko bitters Portland, sunt kitsch church-key. Terry Richardson ugh enim selvage ut narwhal.</p>',
+        'comment_notes_before' => '<p><b>Please be advised that your comment here will be displayed publicly and you should never reveal any identifying or incriminating information in a blog comment.</b> Also remember to be cool to other community members on our blog or we will delete your stuff. Be courteous, and have fun!</p>',
         'comment_notes_after' => '<div class="form-submit-wrap clearfix">
             <div class="form-required-notice">All fields are required</div>
             <button type="submit" class="btn btn-primary">SEND MESSAGE</button>

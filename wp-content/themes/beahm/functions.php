@@ -61,6 +61,23 @@ function beahm_comments( $comment, $args, $depth ) {
     <?php
 }
 
+function beahmlaw_clean_phone($phone) {
+	$cycle = true;
+	while($cycle) {
+		if(strpos($phone, '(') !== false){
+			$phone = str_replace('(','',$phone);
+		} elseif(strpos($phone, ')') !== false){
+			$phone = str_replace(')','',$phone);
+		} elseif(strpos($phone, ' ') !== false){
+			$phone = str_replace(' ','',$phone);
+		} elseif(strpos($phone, '-') !== false){
+			$phone = str_replace('-','',$phone);
+		} else {
+			$cycle = false;
+		}
+	}
+	return $phone;
+}
 
 /**
  * Remove the slug from published post permalinks. Only affect our CPT though.

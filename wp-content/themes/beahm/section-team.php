@@ -5,9 +5,9 @@
         <div class="wb-caption text-center">
             <?php echo ot_get_option('fighters_header') ?>
         </div> <!-- .wb-caption -->
-        <div class="row">
+        <div class="row" style="text-align:center; margin-left:20%;">
             <?php foreach($team as $p): ?>
-            <div class="person col-sm-3">
+            <div class="person col-sm-3" style="margin:auto;">
                 <div class="person-photo"><img src="<?php echo $p['photo'] ?>" alt="" /></div>
                 <h3 class="person-name"><?php echo $p['title'] ?></h3>
                 <div class="person-cv">

@@ -35,7 +35,10 @@
         <div class="container">
             <div id="header-bottom-buttons">
                 <?php if(is_front_page()): ?>
-                <a href="#video" class="scroll btn btn-default"><?php echo ot_get_option('video_link') ?></a>
+				<div style="display:inline-block; vertical-align:middle; margin-right:20px;">
+                    <a href="#video" class="scroll btn btn-default hidden-xs"><?php echo ot_get_option('video_link') ?></a>
+                </div>
+                <a href="tel:8667659188" class="scroll btn btn-default visible-xs">Click to Call</a>
                 <?php else: ?>
                 <a href="#content" class="scroll btn btn-default">Learn your options</a>
                 <?php endif ?>

@@ -1,3 +1,4 @@
+</div>
 <div id="footer">
     <div id="footer-in">
         <div class="container">
@@ -20,30 +21,56 @@
                             'container_id'    => 'footer-nav',
                             'menu_class'      => 'list-unstyled menu'
                     )) ?>
-                    </div> <!-- #footer-nav -->
                 </div> <!-- #footer-top-2 -->
             </div> <!-- .row -->
             <div class="footer-sep"><img src="<?php echo get_template_directory_uri() ?>/images/footer-separator.png" alt="" /></div>
             <div class="row" id="footer-bottom">
-                <div id="footer-bottom-1" class="col-sm-6 col-sm-push-6">
-                    <a href="#">Terms of Use</a>
+                <div id="footer-bottom-1" class="col-sm-5 col-sm-push-7">
+                    <a href="http://www.beahmlaw.com/terms-of-service/">Terms of Service</a>
                     &nbsp;&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="#">Privacy Policy</a>
+                    <a href="http://www.beahmlaw.com/privacy-policy/">Privacy Policy</a>
                 </div>
-                <div id="footer-bottom-2" class="col-sm-6 col-sm-pull-6">
+                <div id="footer-bottom-2" class="col-sm-7 col-sm-pull-5">
                     <?php echo str_replace('[year]', date('Y'), ot_get_option('copyright')) ?>
                 </div>
             </div> <!-- .row -->
         </div> <!-- .container -->
     </div> <!-- #footer-in -->
 </div> <!-- #footer -->
+</div>
 <?php wp_footer() ?>
 <script src="<?php echo get_template_directory_uri(); ?>/scripts/jquery.scrollTo.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/scripts/jquery.localscroll.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/scripts/bootstrap.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/scripts/main.js"></script>
-<script type="text/javascript">var switchTo5x=true;</script>
-<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">stLight.options({publisher: "4584cec8-4f04-423c-8043-5ddc85eeb942", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+
+
+<script type="text/javascript">
+adroll_adv_id = "4KUBUBY3YZAS5CKWFDCKF7";
+adroll_pix_id = "VPV6ZC6O5VF3JNHYTRHQWM";
+(function () {
+var oldonload = window.onload;
+window.onload = function(){
+   __adroll_loaded=true;
+   var scr = document.createElement("script");
+   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+   scr.setAttribute('async', 'true');
+   scr.type = "text/javascript";
+   scr.src = host + "/j/roundtrip.js";
+   ((document.getElementsByTagName('head') || [null])[0] ||
+    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+   if(oldonload){oldonload()}};
+}());
+</script>
+
+<!-- beahmlaw.com -->
+<!-- Start Of NGage -->
+<div id="nGageLH" style="visibility:hidden; display: block; padding: 0; position: fixed; left: 0px; bottom: 50%; z-index: 5000;"></div>
+<script type="text/javascript" src="https://messenger.ngageics.com/ilnksrvr.aspx?websiteid=129-106-6-149-100-233-255-49"></script>
+<!-- End Of NGage -->
+
+
+
 </body>
 </html>
