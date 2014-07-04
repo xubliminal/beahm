@@ -8,6 +8,19 @@ body, html {
 #main-content-container {
 	padding-bottom:170px;
 }
+/* Clearfix */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+.cf {
+    *zoom: 1;
+}
 /* * * Layout & General * * */
 .btn{
 	border-radius: 8px;
@@ -349,6 +362,9 @@ body, html {
 	background-position: 38% 50%;
 	height: 565px;
 	position: relative;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
 }
 #header-quote{
 	position: absolute;
@@ -361,16 +377,21 @@ body, html {
     line-height: 31px;
 }
 #header-quote-in{
-	background-image: url(../images/icon-quote-1.png);
-	background-repeat: no-repeat;
-	background-position: 10px 23px;
-	padding: 17px 17px 8px 42px;
+	background: url(../images/icon-quote-1.png) no-repeat 7px 5px;
+	padding: 0 17px 0px 42px;
+	font-size: 18px;
+	color:#FFF;
+	text-align: center;
+}
+#header-cite {
+	padding: 0 0 0 42px;
+	text-align: center;
 }
 #header-bottom{
 	background-color: rgba(0,0,0,.2);
 	position: relative;
 	text-align: center;
-    padding: 30px 0;
+    padding: 10px 0;
     position: absolute;
     left: 0;
     right: 0;
@@ -381,25 +402,30 @@ body, html {
 	font-size: 16px;
 	text-align: center;
 	padding-bottom: 15px;
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 100%;
 	font-family: 'Proxima Nova';
 }
 #header-founder strong{font-family: 'Proxima Nova Bold';}
 #header-bottom .btn{
 	margin: 0 auto;
-	width: 220px;
 	display: block;
-	padding: 19px 0;
+	padding: 12px 15px;
 	font-family: 'Proxima Nova Semibold';
 	font-size: 15px;
 	text-transform: uppercase;
 }
-#header-bottom .btn+.btn{margin-top: 11px;}
 @media (min-width: 768px) {
 	#header{ background-position: 50% 50%; }
+	#header-bottom-buttons {
+		padding-top: 43px;
+	}
+	#header-quote-in {
+		font-size: 25px;
+		padding:0 17px 0 42px;
+		text-align: left;
+	}
+	#header-cite {
+		text-align: left;
+	}
 	#header-quote{
 		top: 102px;
 		left: 50%;
@@ -414,17 +440,10 @@ body, html {
 		float: left;
 		text-align: left;
 		padding-bottom: 0;
-		padding-top: 13px;
 	}
-	#header-bottom-buttons{
-		float: right;
-		font-size: 0;
+	#header-bottom .btn {
+		padding: 19px 20px;
 	}
-	#header-bottom-buttons .btn{
-		display: inline-block;
-		vertical-align: middle;
-	}
-	#header-bottom .btn+.btn{margin: 0 0 0 20px;}
 }
 
 /* * * Testimonials * * */
@@ -582,6 +601,28 @@ a.link-less, .link-less a{
 }
 
 /* * * Contact & reviews * * */
+#contact .contact-box {
+	padding:30px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #fff;
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.18);
+	-moz-box-shadow: 0 0 5px rgba(0,0,0,.18);
+	box-shadow: 0 0 5px rgba(0,0,0,.18);
+	margin-bottom: 20px;
+}
+#contact h2 {
+	margin-bottom: 0;
+	font-family: 'Proxima Nova Semibold', Helvetica, Arial, sans-serif;
+}
+.contact-box .form-submit-wrap {
+	background: url("../images/logo-McAfee.gif") no-repeat right center;
+}
+.contact-box .form-submit-wrap .btn {
+	display:block;
+	padding: 13px 20px;
+}
 .grey-block{
 	background-color: #f4f4f4;
 	background-image: url(../images/bgr-shadow-about-top.png);
@@ -596,10 +637,7 @@ a.link-less, .link-less a{
     padding-bottom: 40px;
 }
 .grey-block .wb-caption{text-align: center;}
-.review-wrap{
-	padding: 25px 0;
-}
-.review-wrap+.review-wrap{border-top: 1px solid #e0e0e0;}
+
 .contact-form-text{
 	color: #898989;
 	text-align: center;
@@ -612,23 +650,70 @@ a.link-less, .link-less a{
 	margin-top: 15px;
 }
 .form-group{margin-bottom: 8px;}
-.review-icon{
-	width: 50px;
-	float: left;
-}
-.review-content{
-	margin-left: -50px;
-	width: 100%;
-	float: left;
-}
-.rc-in{margin-left: 65px;}
-.review-content h3{
-	font-size: 18px;
-	font-weight: bold;
-	margin: 0 0 10px;
-}
-.review-content .btn{margin: 0 0 10px;}
 .hide-x{display: none;}
+.review-cont {
+	color:#414141;
+	font:100 14px/18px Helvetica, Arial, sans-serif;
+	text-align: center;
+}
+.review-info {
+	font-size: 13px;
+	color:#555;
+	text-align: center;
+}
+
+.review-name {
+	color:#3b65a7;
+	font-weight:bold;
+	font-size:14px;
+}
+.review-friends {
+	background: url("../images/slide-review-friends.jpg") no-repeat left center;
+	padding-left: 20px;
+	display: inline-block;
+}
+.review-amount {
+	background: url("../images/slide-review-amount.jpg") no-repeat left center;
+	padding-left: 20px;
+	display: inline-block;
+}
+.review-stars {
+	height:25px;
+	line-height: 23px;
+	display: inline-block;
+}
+.review-star {
+	float:left;
+	width:23px;
+	height:23px;
+	background: url("../images/slide-review-rating.png") no-repeat 0 0;
+	margin-right: 3px;
+}
+#carousel-reviews {
+	min-height: 370px;
+}
+#carousel-reviews .graphic {
+	margin: 0 auto;
+}
+.carousel-indicators {
+	bottom: -40px;
+}
+.carousel-indicators li {
+	background-color: #CCC;
+	border-color: #CCC;
+}
+.carousel-indicators li.active {
+	background-color: #0e80d5;
+	border-color: #0e80d5;
+}
+.review-badges {
+	border-top: 1px solid #e4e4e4;
+	padding-top: 0	;
+	margin: 40px 0 30px;
+}
+.review-badges img {
+	margin: 0 auto;
+}
 #facebook-widget-wrap .review-content{margin-left: 0;}
 #facebook-widget-wrap .rc-in{ margin-left: 0; }
 #facebook-widget-wrap img{margin: 0 auto;}
@@ -637,6 +722,15 @@ a.link-less, .link-less a{
 	.form-submit-wrap, .grey-block .wb-caption, .contact-form-text{text-align: left;}
 	.hide-x{display: inline;}
 	.review-icon{width: 75px;}
+	.review-info {
+		text-align: left;
+	}
+	.review-cont {
+		text-align: left;
+	}
+	.review-star {
+		display:block;
+	}
 	#facebook-widget-wrap .review-content, .review-content{margin-left: -75px;}
 	#facebook-widget-wrap .rc-in, .rc-in{margin-left: 90px;}
 	.review-content h3{line-height: 32px;}
@@ -666,19 +760,26 @@ a.link-less, .link-less a{
 	font-size: 18px;
 	font-family: 'Proxima Nova';
 }
-.locations strong{font-family: 'Proxima Nova Semibold';}
-.locations p{margin-bottom: 20px;}
+.locations strong{
+	font-family: 'Proxima Nova Semibold', Helvetica, Arial, sans-serif;
+	padding-bottom: 10px;
+	display:block;
+}
+.locations p{margin-bottom: 0;}
 .locations .btn{
 	padding: 9px 25px;
 	font-weight: normal;
 	font-family: 'Proxima Nova Semibold';
+	margin-bottom: 40px;
+}
+.locations img {
+	margin: 0 auto 20px; 
 }
 .loco+.loco{margin-top: 40px;}
 .location-phone{
-	background-image: url(../images/icon-phone-2.png);
-	background-repeat: no-repeat;
-	background-position: 0 50%;
-	padding-left: 20px;
+	background: url(../images/icon-phone-2.png) no-repeat 0 6px;
+	padding:0 0 20px 20px;
+	display: inline-block;
 }
 @media (min-width: 768px) {
 	.loco+.loco{margin-top: 0;}
@@ -886,6 +987,7 @@ div > .post-comment:first-child{
 .children { margin-left: 0px; padding-left: 0px;}
 .post-comment .post-comment,
 .children .post-comment {margin-left: 30px;}
+
 @media (min-width: 768px) {
 	.blog-content{margin-bottom: 0;}
 	.post-social-lbl{display: inline;}
@@ -984,6 +1086,223 @@ div > .post-comment:first-child{
     background: #f4f4f4;
     padding: 20px 20px 0px;
     margin-bottom: 20px;
+}
+
+
+
+/* REVIEWS PAGE */
+.featured-image {
+	background:url("../images/featured-head.jpg") no-repeat center center ;
+	height:200px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	position: relative;
+	text-align: center;
+}
+.featured-image > h2 {
+	background-color: rgba(0,0,0,0.3);
+	padding:12px 20px;
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	color:#FFF;
+	text-shadow:0 1px 2px rgba(0,0,0,0.7);
+	font:22px 'Proxima Nova Semibold', Helvetica, Arial, sans-serif;
+	margin: 65px auto 0;
+	display: inline-block;
+	vertical-align: middle;
+} 
+.review-description h2 {
+	font:22px 'Proxima Nova Semibold', Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+.review-description p {
+	font-size: 14px;
+	color:#303030;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ececec;
+}
+.main-review-log {
+	padding-bottom: 20px;
+	line-height: 24px;
+	font-size: 13px;
+}
+.main-review-log .results-show {
+	float:left;
+}
+.main-review-log .paging {
+	float:right;
+}
+.main-review-log .paging li {
+	float:left;
+	margin-left: 5px;
+}
+.main-review-log .paging li a {
+	display:block;
+	width:24px;
+	height:24px;
+	text-align: center;
+	font-weight: 200;
+	background-color: #e1e1e1;
+	color:#303030;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+}
+.main-review-log .paging li a.active {
+	background-color: #0070c4;
+	color:#FFF;
+}
+.list-results > li {
+	position: relative;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ececec;
+	text-align: center;
+}
+.list-results .top-result {
+	background-color: #f1f9ff;
+	padding:20px;
+	text-align: center;
+}
+.list-results .yelp-rating {
+	width:115px;
+	display: inline-block;
+	text-align: left;
+}
+.list-results .yelp-rating strong {
+	font-size: 16px;
+	margin-bottom: 5px;
+	display:block;
+}
+.list-results .yelp-rating .reviews-amount {
+	font-size: 13px;
+	padding-top: 5px;
+	display:block;
+}
+.list-results .yelp-rating li {
+	width:18px;
+	height:15px;
+	background:url("../images/reviews-icon-sprite.png") no-repeat 0 0;
+	float:left;
+}
+.list-results .yelp-rating li.full {
+	background-position: -2px -25px;
+}
+.list-results .yelp-rating li.empty {
+	background-position: -2px -50px;
+}
+.list-results .top-result .yelp-rating li.full {
+	background-position: -2px 0
+}
+.list-results .thumb {
+	display:inline-block;
+	margin:0 10px 10px 0;
+	vertical-align: top;
+}
+.list-results .lawyer-info {
+	clear:both;
+	margin:0 auto 20px;
+	max-width:180px;
+	text-align: center;
+}
+.list-results .lawyer-info h3 {
+	font-size: 18px;
+	text-transform: uppercase;
+	margin-top: 0;
+}
+.list-results .lawyer-info p {
+	font-size: 13px;
+}
+.list-results .top-result .lawyer-info p {
+	font-size: 14px;
+}
+.list-results .contact-info {
+	clear:both;
+	border-top:1px solid #def0fe;
+	padding-top: 10px;
+}
+.list-results .contact-info li {
+	display:inline-block;
+	float:none;
+}
+.list-results .contact-info li a {
+	display:block;
+	background: url("../images/reviews-icon-sprite.png") no-repeat 0 0 transparent;
+	padding-left: 25px;
+	color:#303030;
+}
+.list-results li a.phone {
+	background-position: 0 -73px;
+}
+.list-results li a.email {
+	background-position: 0 -103px;
+}
+.list-results li a.chat {
+	background-position: 0 -130px;
+	color:#0c7dd2;
+}
+.sidebar-widget label {
+	font-weight: normal;
+}
+.sidebar-widget input[type="checkbox"] {
+	margin: 0 5px 0 0;
+	vertical-align: middle;
+}
+@media (min-width: 768px) {
+	.featured-image {
+		min-height: 350px;
+		width:100%;
+	}
+	.featured-image > h2 {
+		font-size: 33px;
+		margin-top: 130px;
+	}
+	.list-results .top-result {
+		text-align: left;
+	}
+	.list-results .lawyer-info {
+		float:left;
+		max-width: 180px;
+		clear:none;
+		text-align: left;
+	}
+	.list-results .thumb {
+		float:left;
+		margin:0 10px 10px 0;
+	}
+	.list-results .yelp-rating {
+		position: absolute;
+		top: 0;
+		right:20px;
+	}
+	.list-results .top-result .yelp-rating {
+		top:20px;
+		right:0;
+	}
+	.list-results > li {
+		text-align: left;
+	}
+	.list-results .contact-info li {
+		float:left;
+		margin-right:10px;
+	}
+	.sidebar-widget {
+		border-bottom: 1px solid #ececec;
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+	}
+	.sidebar-widget h3 {
+		font:16px 'Proxima Nova Semibold', Helvetica, Arial, sans-serif;
+		text-transform: uppercase;
+	}
+
+	.sidebar-widget label {
+		font-size:14px;
+		font-weight: normal;
+	}
 }
 
 /* * * Responsive Facebook Widget * * */

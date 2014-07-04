@@ -1,5 +1,17 @@
 <?php
 
+require_once 'lib/OAuth.php';
+
+define('CONSUMER_KEY', 'pl0MyhUsjCIOaypA-ALjjQ');
+define('CONSUMER_SECRET', 'CkHsQqb4e5cg5BTiL_wBezZPENw');
+define('TOKEN', 'd-i8DpThATcTZKJ08KxAFanSE5JutdVf');
+define('TOKEN_SECRET', 'qwYcutXS4puLP6X_vzY6NgLsl3Y');
+
+define('API_HOST', 'api.yelp.com');
+define('DEFAULT_TERM', 'DUI Lawyers');
+define('SEARCH_LIMIT', 10);
+define('SEARCH_PATH', '/v2/search/');
+
 register_nav_menus(array(
     'main' => 'Main'
 ));
@@ -39,6 +51,16 @@ register_sidebar(array(
     'after_widget'  => '</div>',
     'before_title'  => '<h2 class="blog-sb-title">',
     'after_title'   => '</h2>'
+));
+
+register_sidebar(array(
+    'name'          => __( 'Reviews Sidebar', 'beahm' ),
+    'id'            => 'reviews-sidebar',
+    'description'   => 'Widgets will be display on reviews pages',    
+    'before_widget' => '<div id="%1$s" class="sidebar-widget widget %2$s">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
 ));
 
 function beahm_comments( $comment, $args, $depth ) {
@@ -114,3 +136,53 @@ function vipx_parse_request_tricksy( $query ) {
         $query->set( 'post_type', array( 'post', 'location', 'page' ) );
 }
 add_action( 'pre_get_posts', 'vipx_parse_request_tricksy' );
+
+
+function beahm_yelp_listings($location) {
+    $url_params = array();
+    
+    $url_params['term'] = DEFAULT_TERM;
+    $url_params['location'] = $location;
+    $url_params['limit'] = SEARCH_LIMIT;
+    $search_path = SEARCH_PATH . "?" . http_build_query($url_params);
+    
+    return beahm_yelp_request(API_HOST, $search_path);
+    //echo '<pre>'; var_dump($result); die('asd');
+}
+
+function beahm_yelp_request($host, $path) {
+    $unsigned_url = "http://" . $host . $path;
+
+    // Token object built using the OAuth library
+    $token = new OAuthToken(TOKEN, TOKEN_SECRET);
+
+    // Consumer object built using the OAuth library
+    $consumer = new OAuthConsumer(CONSUMER_KEY, CONSUMER_SECRET);
+
+    // Yelp uses HMAC SHA1 encoding
+    $signature_method = new OAuthSignatureMethod_HMAC_SHA1();
+
+    $oauthrequest = OAuthRequest::from_consumer_and_token(
+        $consumer, 
+        $token, 
+        'GET', 
+        $unsigned_url
+    );
+    
+    // Sign the request
+    $oauthrequest->sign_request($signature_method, $consumer, $token);
+    
+    // Get the signed URL
+    $signed_url = $oauthrequest->to_url();
+    
+    // Send Yelp API Call
+    $ch = curl_init($signed_url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    $data = curl_exec($ch);
+    curl_close($ch);
+    
+    return json_decode($data);
+}
+
+

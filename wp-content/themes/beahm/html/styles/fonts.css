@@ -41,3 +41,22 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	@font-face {
+		font-family: 'Proxima Nova Semibold';
+		src: url('../fonts/proximanovasemibold.svg#proximanovasemibold') format('svg');
+	}
+	@font-face {
+		font-family: 'Proxima Nova Bold';
+		src: url('../fonts/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+	}
+	@font-face {
+		font-family: 'Proxima Nova';
+		src: url('../fonts/proximanova-reg-webfont.svg#proximanova-reg-webfont') format('svg');
+	}
+	@font-face {
+		font-family: 'Proxima Nova Light';
+		src: url('../fonts/proximanova-light.svg#proximanova-light') format('svg');
+	}
+}
