@@ -21,8 +21,19 @@
             return false;
         });
         
+        var menuOpen = false;
+        $('#menu-item-501 a.dropdown-toggle').click(function(e){
+            $li = $(this).parents('li');
+            if(menuOpen) {
+                $li.removeClass('open');
+            }
+            menuOpen = !menuOpen;
+            return false;
+        });
+
         $('body').click(function(){
             $('.person-cv').removeClass('show');
+            $('#menu-item-501').removeClass('open');
         });
     });
 })(window.jQuery);
