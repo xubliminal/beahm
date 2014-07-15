@@ -42,7 +42,7 @@
 							<li><a href="javascript:StartNgageChat();" class="chat">Live chat</a></li>
 						</ul>
 					</li>
-					<?php $result = beahm_yelp_listings(get_field('location')) ?>
+					<?php $result = beahm_yelp_listings(get_field('location'), get_field('query')) ?>
 					<?php foreach($result->businesses as $buss): ?>
 					<?php if($buss->name != 'Beahm Law'): ?>
 					<li class="cf">
@@ -68,4 +68,5 @@
 		</div>
 	</div>
 </div>
+<?php get_template_part('section', 'contact'); ?>
 <?php get_footer() ?>

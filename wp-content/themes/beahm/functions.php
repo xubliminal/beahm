@@ -138,10 +138,10 @@ function vipx_parse_request_tricksy( $query ) {
 add_action( 'pre_get_posts', 'vipx_parse_request_tricksy' );
 
 
-function beahm_yelp_listings($location) {
+function beahm_yelp_listings($location, $query) {
     $url_params = array();
     
-    $url_params['term'] = DEFAULT_TERM;
+    $url_params['term'] = $query;
     $url_params['location'] = $location;
     $url_params['limit'] = SEARCH_LIMIT;
     $search_path = SEARCH_PATH . "?" . http_build_query($url_params);
