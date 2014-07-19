@@ -18,7 +18,7 @@
 			<div class="col-md-8 col-sm-8 col-xs-12 main-review-results">
 				<ul class="list-unstyled list-results">
 					<li class="top-result cf">
-						<img class="thumb" src="<?= get_template_directory_uri() ?>/images/reviews-thumb-jason.png" alt="" />
+						<img class="thumb" src="<?php the_field('business_photo') ?>" alt="" />
 						<div class="yelp-rating">
 							<strong>Yelp Rating</strong>
 							<ul class="list-unstyled cf">
@@ -31,13 +31,12 @@
 							<span class="reviews-amount">46 reviews</span>
 						</div>
 						<div class="lawyer-info">
-							<h3>JASON BEAHM</h3>
-							<p>28 2nd Street, Suite 300
-							San Francisco, CA 94105</p>
-							<a href="" class="btn btn-primary">Request a call</a>
+							<h3><?php the_field('business_name') ?></h3>
+							<p><?php the_field('address') ?></p>
+							<a href="#contact" class="scroll btn btn-primary">Request a call</a>
 						</div>
 						<ul class="list-unstyled contact-info cf">
-							<li><a href="tel:4154938677" class="phone">415-493-8677</a></li>
+							<li><a href="tel:<?php echo preg_replace('[\-]', '', get_field('phone_number')) ?>" class="phone"><?php the_field('phone_number') ?></a></li>
 							<li><a href="mailto:info@beahmlaw.com" class="email">info@beahmlaw.com</a></li>
 							<li><a href="javascript:StartNgageChat();" class="chat">Live chat</a></li>
 						</ul>
