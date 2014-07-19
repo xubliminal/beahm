@@ -197,7 +197,7 @@ function beahm_get_blacklisted_arr($list) {
 
 function beahm_not_blacklisted($title, $list) {
     $title = strtolower($title);
-    //$list[] = 'beahm';
+    $list[] = 'beahm';
     foreach($list as $w) {
         if(strpos($title, $w) !== false)
             return false;
