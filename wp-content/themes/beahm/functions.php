@@ -185,4 +185,23 @@ function beahm_yelp_request($host, $path) {
     return json_decode($data);
 }
 
+function beahm_get_blacklisted_arr($list) {
+    $list = trim($list);
+    $arr = explode("<br />", $list);
+    $result = array();
+    foreach($arr as $r) {
+        if(!empty($r))
+            $result[] = strtolower($r);
+    }
+    return $result;
+}
+
+function beahm_not_blacklisted($title, $list) {
+    $title = strtolower($title);
+    foreach($list as $w) {
+        if(strpos($title, $w) !== false)
+            return false;
+    }
+    return true;
+}
 

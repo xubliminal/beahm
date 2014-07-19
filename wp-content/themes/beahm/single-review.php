@@ -43,8 +43,9 @@
 						</ul>
 					</li>
 					<?php $result = beahm_yelp_listings(get_field('location'), get_field('query')) ?>
+					<?php $black_list = beahm_get_blacklisted_arr(get_field('black_list')); ?>
 					<?php foreach($result->businesses as $buss): ?>
-					<?php if($buss->name != 'Beahm Law'): ?>
+					<?php if($buss->name != 'Beahm Law' && beahm_not_blacklisted($buss->name, $black_list)): ?>
 					<li class="cf">
 						<img class="thumb" src="<?= $buss->image_url ?>" width="72" height="72" alt="" />
 						<div class="yelp-rating">
