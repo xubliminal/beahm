@@ -28,7 +28,7 @@
 								<li class="full"></li>
 								<li class="full"></li>
 							</ul>
-							<span class="reviews-amount">46 reviews</span>
+							<span class="reviews-amount"><?php echo beahm_get_reviews_count() ?> reviews</span>
 						</div>
 						<div class="lawyer-info">
 							<h3><?php the_field('business_name') ?></h3>
@@ -44,7 +44,7 @@
 					<?php $result = beahm_yelp_listings(get_field('location'), get_field('query')) ?>
 					<?php $black_list = beahm_get_blacklisted_arr(get_field('black_list')); ?>
 					<?php foreach($result->businesses as $buss): ?>
-					<?php if($buss->name != 'Beahm Law' && beahm_not_blacklisted($buss->name, $black_list)): ?>
+					<?php if(beahm_not_blacklisted($buss->name, $black_list)): ?>
 					<li class="cf">
 						<img class="thumb" src="<?= $buss->image_url ?>" width="72" height="72" alt="" />
 						<div class="yelp-rating">

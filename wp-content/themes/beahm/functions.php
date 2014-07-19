@@ -147,7 +147,6 @@ function beahm_yelp_listings($location, $query) {
     $search_path = SEARCH_PATH . "?" . http_build_query($url_params);
     
     return beahm_yelp_request(API_HOST, $search_path);
-    //echo '<pre>'; var_dump($result); die('asd');
 }
 
 function beahm_yelp_request($host, $path) {
@@ -198,10 +197,23 @@ function beahm_get_blacklisted_arr($list) {
 
 function beahm_not_blacklisted($title, $list) {
     $title = strtolower($title);
+    //$list[] = 'beahm';
     foreach($list as $w) {
         if(strpos($title, $w) !== false)
             return false;
     }
     return true;
+}
+
+function beahm_get_reviews_count() {
+    $url_params = array();
+    
+    $url_params['term'] = 'Beahm Law';
+    $url_params['location'] = 'San Francisco, CA';
+    $url_params['limit'] = 1;
+    $search_path = SEARCH_PATH . "?" . http_build_query($url_params);
+    
+    $result = beahm_yelp_request(API_HOST, $search_path);
+    return $result->businesses[0]->review_count;
 }
 
