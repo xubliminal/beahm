@@ -6,7 +6,7 @@
                 <div class="city-caption clearfix">
                     <?php $parent = get_field('parent_location') ?>
                     <div class="city-caption-img"><?php echo get_the_post_thumbnail($parent->ID, 'location_thumb'); ?></div>
-                    <h2><?php echo get_the_title($parent->ID) ?></h2>
+                    <h2><?php the_title() ?></h2>
                     <p>
                         <?php the_field('address', $parent->ID) ?>
                         <br><span class="location-phone"><?php the_field('phone', $parent->ID) ?></span>
