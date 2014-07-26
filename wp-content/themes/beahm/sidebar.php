@@ -1,4 +1,4 @@
-<?php if ( 'location' == get_post_type() ): ?>
+<?php if ( 'location' == get_post_type() || 'sublocation' == get_post_type()): ?>
 <div class="col-sm-5 testi-2-wrap">
     <?php dynamic_sidebar('location_sidebar') ?>
 </div> <!-- .col-sm-5 -->
